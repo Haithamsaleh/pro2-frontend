@@ -7,8 +7,9 @@ const Home = () => {
         <Routes>
         <Route path="/home" element={<Home/>}/>
        </Routes>
-
-       <h1>dfdfdfd</h1>
+<div className='home'>
+    <h1>l</h1>
+</div>
        </>
     )
 }

@@ -14,7 +14,7 @@ const NavBar = () => {
   
     <div className="container">
       <ul>
-     <li><Link to="/home">home</Link></li>
+     <li><Link to="/">home</Link></li>
      
      <li> <Link to="/Singup">Sing up</Link></li>
      
@@ -24,7 +24,7 @@ const NavBar = () => {
      
      <li><Link to="/fav">favorite</Link></li>
     
-     <button onClick={()=>{localStorage.removeItem("newUser")}}>logout</button>
+     <button className='submit1'  onClick={()=>{localStorage.removeItem("newUser")}}>logout</button>
      {/* <Link to="/home">home</Link>
      <Link to="/home">home</Link>
      <Link to="/home">home</Link> */}

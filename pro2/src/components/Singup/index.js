@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router";
+import Swal from 'sweetalert2'
+import "./style.css";
+
+
+
 const Regestier = () => {
   const navigate = useNavigate();
   const [users, setUsers] = useState([]);
@@ -36,10 +41,23 @@ const Regestier = () => {
         console.log(error);
       }
     } else {
-      let myWindow = window.open("", "", "width=200,height=100");
-      myWindow.document.write("<p> email existing</p>");
-      myWindow.focus();
-      navigate("/home");
+      Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire(
+            'Deleted!',
+            'Your file has been deleted.',
+            'success'
+          )
+        }
+      })
     }
   };
 
@@ -52,29 +70,36 @@ const Regestier = () => {
   };
 
   return (
-    <div>
+    <div className='login-box'>
+      <h2>Singup</h2>
       <form onSubmit={ckeck}>
+        <div className='user-box'>
         <input
           type="text"
           name="userName"
           placeholder="userName"
           onChange={(e) => setUserName(e.target.value)}
         />
+        </div>
+        <div className='user-box'>
         <input
           type="emali"
           name="emali"
           placeholder="emali"
           onChange={(e) => setEmail(e.target.value)}
         />
+        </div>
+        <div className='user-box'>
         <input
           type="password"
           name="password"
           placeholder="password"
           onChange={(e) => setPassword(e.target.value)}
         />
-        <input type="submit" value="Register" />
+        </div>
+        <input className='submit' type="submit" value="Register" />
       </form>
-      <p onClick={loginPage}>Already have an account ?</p>
+      <a className='register' onClick={loginPage}>Already have an account ?</a>
     </div>
   );
 };
