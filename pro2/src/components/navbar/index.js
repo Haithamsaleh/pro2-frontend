@@ -22,7 +22,6 @@ const NavBar = () => {
      
      <li><Link to="/Login">login</Link></li>
      
-     <li><Link to="/fav">favorite</Link></li>
     
      <button className='submit1'  onClick={()=>{localStorage.removeItem("newUser")}}>logout</button>
      {/* <Link to="/home">home</Link>
