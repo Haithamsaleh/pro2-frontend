@@ -63,8 +63,13 @@ const Login = () => {
   };
 
   return (
+    <>
+    <div className='hero-container'>  <video src='/videos/video-1.mp4' autoPlay loop muted />
+    </div>
     <div className='ee'>    
+
     <div className="login-box ">
+      
       <h2>Login</h2>
       <form onSubmit={ckeck}>
         <div className='user-box'>
@@ -101,6 +106,7 @@ const Login = () => {
    
 
   </div>
+  </>
   );
 };
 

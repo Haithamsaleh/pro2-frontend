@@ -42,21 +42,10 @@ const Regestier = () => {
       }
     } else {
       Swal.fire({
-        title: 'Are you sure?',
-        text: "You won't be able to revert this!",
-        icon: 'warning',
-        showCancelButton: true,
+        title: 'your account has been created successfully',
+        icon: 'success',
         confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, delete it!'
-      }).then((result) => {
-        if (result.isConfirmed) {
-          Swal.fire(
-            'Deleted!',
-            'Your file has been deleted.',
-            'success'
-          )
-        }
+        confirmButtonText: 'Start browsing '
       })
     }
   };
@@ -70,7 +59,11 @@ const Regestier = () => {
   };
 
   return (
+    <>
+    <div className='hero-container'> <video src='/videos/video-1.mp4' autoPlay loop muted /></div>
+
     <div className='login-box'>
+
       <h2>Singup</h2>
       <form onSubmit={ckeck}>
         <div className='user-box'>
@@ -101,6 +94,7 @@ const Regestier = () => {
       </form>
       <a className='register' onClick={loginPage}>Already have an account ?</a>
     </div>
+    </>
   );
 };
 

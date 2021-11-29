@@ -6,14 +6,18 @@ import Cards from './components/Books';
 import Navbar from './components/navbar';
 import Login from './components/Login';
 import Regestier from './components/Singup';
-
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
-
-  
+<>
+  <div>
 <Navbar />
-  
+</div>
+<div>
+  <Footer />
+  </div>
+  </>
 )
 
 }

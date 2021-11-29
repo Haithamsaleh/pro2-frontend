@@ -25,7 +25,7 @@ const Books = () => {
   return (
     <section className={"cards-section"}>
       <div className="info__name"><h1>جميع الكتب</h1>
-        {/* <input type="Text" placeholder="Search..." className="search"/> */}
+        <input type="Text" placeholder="Search..." className="search"/>
       </div>
       <div className="cards-container">
         {books.map((item) => {
